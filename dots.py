@@ -87,8 +87,8 @@ class Board(object):
         a = self.get_array()
         a.dumb_display()
 
-def fit(fs_array, fs_arrays, add_border=True):
-    if add_border:
+def fit(fs_array, fs_arrays, border=True):
+    if border:
         fs_arrays = [fsarray(['+'+'-'*fsa.width+'+'] +
                              ['|'+line+'|' for line in fsa.rows] +
                              ['+'+'-'*fsa.width+'+'])
@@ -122,7 +122,7 @@ def show_moves():
     #for board in boards:
     #    board.dumb_display()
     a = FSArray(0, term_width)
-    fit(a, boards)
+    fit(a, boards, border=False)
     a.dumb_display()
 
 sys.setrecursionlimit(30)
